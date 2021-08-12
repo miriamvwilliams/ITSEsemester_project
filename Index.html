@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Future Value Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<script>
+
+function FV(PV,i,n){
+var x=(1+i/100)
+var FV=PV*(Math.pow(x,n))
+return FV;
+}
+function Cal_FV(){
+var pvalue=parseFloat(document.getElementById("pv").value);
+var interest=parseFloat(document.getElementById("ir").value);
+var num=parseInt(document.getElementById("n").value);
+var fvalue=FV(pvalue, interest, num);
+var fv=fvalue.toFixed(2);
+
+document.getElementById('answer').textContent="Future Value = $"+fv;
+}
+const formatToCurrency = amount => {
+  return "$" + fvalue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+};
+</script>
+
+
+
+<body>
+<h1>Future Value Calculator</h1>
+<h3 class="instructions">Please enter the following values and click submit to find the Future value:</h3>
+
+
+<div class="container">
+<p>Present Value: <input type="text"  placeholder="$200000" size="5" id="pv"></p>
+<p>Interest Rate (%): <input type="text" placeholder="6.5%" size="5" id="ir"></p>
+<p>Number of Years (N): <input type="text" placeholder="30 years"size="5" id="n"></p>
+<h3 id="answer"><h3>
+<input type="button" value="Submit" onclick="Cal_FV()">
+
+</div>
+
+</body>
+</html>
+
+    
+
+  
+       
+</body>
+</html>
